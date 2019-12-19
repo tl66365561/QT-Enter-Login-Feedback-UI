@@ -1,4 +1,4 @@
-﻿Build started 2019/12/19 10:08:11.
+﻿Build started 2019/12/19 20:08:07.
      1>Project "C:\Users\ADMIN\documents\visual studio 2010\Projects\regist\regist\regist.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Release\regist.lastbuildstate".
@@ -6,6 +6,8 @@
          Creating "Release\regist.unsuccessfulbuild" because "AlwaysCreate" was specified.
        CustomBuild:
          Uic'ing regist.ui...
+         Qt: Untested Windows version 6.2 detected!
+         Moc'ing login.h...
          Qt: Untested Windows version 6.2 detected!
          Moc'ing feedback.h...
          Qt: Untested Windows version 6.2 detected!
@@ -15,18 +17,21 @@
          Qt: Untested Windows version 6.2 detected!
          Rcc'ing regist.qrc...
          Qt: Untested Windows version 6.2 detected!
-     1>RCC : warning : No resources in 'C:\Users\ADMIN\documents\visual studio 2010\Projects\regist\regist\regist.qrc'.
-         
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\4.7.4\include /I.\GeneratedFiles\Release /IC:\Qt\4.7.4\include\QtCore /IC:\Qt\4.7.4\include\QtGui /IC:\Qt\4.7.4\include\QtSql /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt database.cpp enter.cpp feedback.cpp GeneratedFiles\Release\moc_enter.cpp GeneratedFiles\Release\moc_feedback.cpp GeneratedFiles\Release\moc_Mydesign.cpp main.cpp Mydesign.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\4.7.4\include /I.\GeneratedFiles\Release /IC:\Qt\4.7.4\include\QtCore /IC:\Qt\4.7.4\include\QtGui /IC:\Qt\4.7.4\include\QtSql /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt database.cpp enter.cpp feedback.cpp GeneratedFiles\Release\moc_enter.cpp GeneratedFiles\Release\moc_feedback.cpp GeneratedFiles\Release\moc_login.cpp GeneratedFiles\Release\moc_Mydesign.cpp login.cpp main.cpp Mydesign.cpp
          database.cpp
          enter.cpp
          feedback.cpp
          moc_enter.cpp
          moc_feedback.cpp
+         moc_login.cpp
          moc_Mydesign.cpp
+     1>c:\users\admin\documents\visual studio 2010\projects\regist\regist\generatedfiles\release\../../Mydesign.h(3): warning C4068: unknown pragma
+         login.cpp
          main.cpp
+     1>c:\users\admin\documents\visual studio 2010\projects\regist\regist\Mydesign.h(3): warning C4068: unknown pragma
          Mydesign.cpp
+     1>c:\users\admin\documents\visual studio 2010\projects\regist\regist\Mydesign.h(3): warning C4068: unknown pragma
          Generating Code...
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\4.7.4\include /I.\GeneratedFiles\Release /IC:\Qt\4.7.4\include\QtCore /IC:\Qt\4.7.4\include\QtGui /IC:\Qt\4.7.4\include\QtSql /nologo /W1 /WX- /O2 /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_DLL /D QT_NO_DEBUG /D NDEBUG /D QT_CORE_LIB /D QT_GUI_LIB /D QT_SQL_LIB /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\qrc_regist.cpp
          qrc_regist.cpp
@@ -37,7 +42,9 @@
          Release\qrc_regist.obj
          Release\moc_enter.obj
          Release\moc_feedback.obj
+         Release\moc_login.obj
          Release\moc_Mydesign.obj
+         Release\login.obj
          Release\main.obj
          Release\Mydesign.obj
          regist.vcxproj -> C:\Users\ADMIN\documents\visual studio 2010\Projects\regist\Win32\Release\regist.exe
@@ -50,4 +57,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:13.05
+Time Elapsed 00:00:06.21

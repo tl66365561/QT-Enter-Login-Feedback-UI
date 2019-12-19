@@ -7,14 +7,16 @@
 message("You are running qmake on a generated .pro file. This may not work!")
 
 
-HEADERS += ./feedback.h \
+HEADERS += ./database.h \
+    ./feedback.h \
     ./enter.h \
     ./Mydesign.h \
-    ./database.h
-SOURCES += ./enter.cpp \
+    ./login.h
+SOURCES += ./database.cpp \
+    ./enter.cpp \
     ./feedback.cpp \
     ./main.cpp \
     ./Mydesign.cpp \
-    ./database.cpp
+    ./login.cpp
 FORMS += ./regist.ui
 RESOURCES += regist.qrc

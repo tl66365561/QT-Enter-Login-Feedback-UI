@@ -9,6 +9,7 @@ QDialog(parent)
 	//用户名Label
 	//userNameLbl->setMargin(20);
 	userNameLbl = new QLabel(this);   //new一个标签对象
+	userNameLbl->setMargin(20);
 	userNameLbl->move(70,80);         //移动到(70,80)位置(Label左上角坐标，相对于父窗体)
 	userNameLbl->setText("UserName:");  //设置标签文本
 
@@ -20,6 +21,7 @@ QDialog(parent)
 	//密码Label
 	pwdLbl = new QLabel(this);
 	pwdLbl->move(80,130);
+	pwdLbl->setMargin(20);
 	pwdLbl->setText("PassWord:");
 
 	//密码输入框
@@ -50,7 +52,7 @@ void EnterForm::enter_()
 	//获得userNameLEd输入框的文本：userNameLEd->text()；
 	//trimmed()去掉前后空格
 	//tr()函数，防止设置中文时乱码
-	if(userNameLEd->text().trimmed() == tr("tonglin") && pwdLEd->text() == tr("123456"))
+	if(userNameLEd->text().trimmed() == tr("tonglin") && pwdLEd->text() == tr("123456"))             //添加数据库之后，这边需要搞一个Search去判断是否在数据库中
 	{
 		
 		//内存泄漏
