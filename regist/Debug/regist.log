@@ -1,21 +1,26 @@
-﻿Build started 2019/12/18 10:27:18.
-     1>Project "c:\Users\ADMIN\documents\visual studio 2010\Projects\regist\regist\regist.vcxproj" on node 2 (rebuild target(s)).
-     1>_PrepareForClean:
-         Deleting file "Debug\regist.lastbuildstate".
-       InitializeBuildStatus:
+﻿Build started 2019/12/18 14:41:25.
+     1>Project "C:\Users\ADMIN\Documents\Visual Studio 2010\Projects\regist\regist\regist.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
          Creating "Debug\regist.unsuccessfulbuild" because "AlwaysCreate" was specified.
        CustomBuild:
          Uic'ing regist.ui...
+         Qt: Untested Windows version 6.2 detected!
+         Moc'ing feedback.h...
+         Qt: Untested Windows version 6.2 detected!
+         Moc'ing enter.h...
          Qt: Untested Windows version 6.2 detected!
          Moc'ing Mydesign.h...
          Qt: Untested Windows version 6.2 detected!
          Rcc'ing regist.qrc...
          Qt: Untested Windows version 6.2 detected!
-     1>RCC : warning : No resources in 'c:\Users\ADMIN\documents\visual studio 2010\Projects\regist\regist\regist.qrc'.
+     1>RCC : warning : No resources in 'C:\Users\ADMIN\Documents\Visual Studio 2010\Projects\regist\regist\regist.qrc'.
          
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\4.7.4\include /I.\GeneratedFiles\Debug /IC:\Qt\4.7.4\include\QtCore /IC:\Qt\4.7.4\include\QtGui /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt enter.cpp GeneratedFiles\Debug\moc_Mydesign.cpp main.cpp Mydesign.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\4.7.4\include /I.\GeneratedFiles\Debug /IC:\Qt\4.7.4\include\QtCore /IC:\Qt\4.7.4\include\QtGui /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt enter.cpp feedback.cpp GeneratedFiles\Debug\moc_enter.cpp GeneratedFiles\Debug\moc_feedback.cpp GeneratedFiles\Debug\moc_Mydesign.cpp main.cpp Mydesign.cpp
          enter.cpp
+         feedback.cpp
+         moc_enter.cpp
+         moc_feedback.cpp
          moc_Mydesign.cpp
          main.cpp
          Mydesign.cpp
@@ -23,19 +28,23 @@
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\GeneratedFiles /I. /IC:\Qt\4.7.4\include /I.\GeneratedFiles\Debug /IC:\Qt\4.7.4\include\QtCore /IC:\Qt\4.7.4\include\QtGui /Zi /nologo /W1 /WX- /Od /Oy- /D UNICODE /D WIN32 /D QT_LARGEFILE_SUPPORT /D QT_DLL /D QT_CORE_LIB /D QT_GUI_LIB /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t- /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt GeneratedFiles\qrc_regist.cpp
          qrc_regist.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\admin\documents\visual studio 2010\Projects\regist\Win32\Debug\\regist.exe" /NOLOGO /LIBPATH:C:\Qt\4.7.4\lib qtmaind.lib QtCored4.lib QtGuid4.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\regist.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"c:\users\admin\documents\visual studio 2010\Projects\regist\Win32\Debug\regist.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\admin\documents\visual studio 2010\Projects\regist\Win32\Debug\regist.lib" /MACHINE:X86 Debug\enter.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ADMIN\Documents\Visual Studio 2010\Projects\regist\Win32\Debug\\regist.exe" /NOLOGO /LIBPATH:C:\Qt\4.7.4\lib qtmaind.lib QtCored4.lib QtGuid4.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\regist.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\ADMIN\Documents\Visual Studio 2010\Projects\regist\Win32\Debug\regist.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ADMIN\Documents\Visual Studio 2010\Projects\regist\Win32\Debug\regist.lib" /MACHINE:X86 Debug\enter.obj
+         Debug\feedback.obj
+         Debug\moc_enter.obj
+         Debug\moc_feedback.obj
          Debug\moc_Mydesign.obj
          Debug\qrc_regist.obj
          Debug\main.obj
          Debug\Mydesign.obj
-         regist.vcxproj -> c:\users\admin\documents\visual studio 2010\Projects\regist\Win32\Debug\regist.exe
+         LINK : C:\Users\ADMIN\Documents\Visual Studio 2010\Projects\regist\Win32\Debug\\regist.exe not found or not built by the last incremental link; performing full link
+         regist.vcxproj -> C:\Users\ADMIN\Documents\Visual Studio 2010\Projects\regist\Win32\Debug\regist.exe
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"c:\users\admin\documents\visual studio 2010\Projects\regist\Win32\Debug\\regist.exe;#1" /manifest Debug\regist.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\ADMIN\Documents\Visual Studio 2010\Projects\regist\Win32\Debug\\regist.exe;#1" /manifest Debug\regist.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\regist.unsuccessfulbuild".
          Touching "Debug\regist.lastbuildstate".
-     1>Done Building Project "c:\Users\ADMIN\documents\visual studio 2010\Projects\regist\regist\regist.vcxproj" (rebuild target(s)).
+     1>Done Building Project "C:\Users\ADMIN\Documents\Visual Studio 2010\Projects\regist\regist\regist.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.68
+Time Elapsed 00:00:09.06

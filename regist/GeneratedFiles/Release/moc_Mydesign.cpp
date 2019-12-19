@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Mydesign.h'
 **
-** Created: Wed Dec 18 11:46:00 2019
+** Created: Thu Dec 19 10:08:14 2019
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.4)
 **
 ** WARNING! All changes made in this file will be lost!

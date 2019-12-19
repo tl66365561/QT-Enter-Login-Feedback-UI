@@ -68,6 +68,9 @@
     <ClCompile Include="GeneratedFiles\Release\moc_feedback.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="database.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="regist.ui">
@@ -89,6 +92,9 @@
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_regist.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="database.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
