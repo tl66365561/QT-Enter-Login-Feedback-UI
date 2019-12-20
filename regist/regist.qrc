@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="regist">
-      <file alias="doc-open">D:\KOBE.jpg</file>
+      <file alias="doc-open">D:\index.jpg</file>
     </qresource>
 </RCC>

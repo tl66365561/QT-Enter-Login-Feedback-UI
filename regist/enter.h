@@ -11,6 +11,8 @@
 #include <QMessageBox>
 #include<QLabel>
 #include<QLineEdit>
+#include "database.h"
+
 
 class EnterForm : public QDialog
 {
@@ -21,7 +23,7 @@ public:
 
 public slots:
 		void enter_();//点击登录按钮是执行的槽函数
-		
+	
 private:
 	QLabel *userNameLbl;         //"用户名"标签
 	QLabel *pwdLbl;              //"密码"标签
@@ -29,8 +31,11 @@ private:
 	QLineEdit *pwdLEd;           //密码编辑行
 	QPushButton *loginBtn;       //登录按钮
 	QPushButton *exitBtn;        //退出按钮
-
 	QMessageBox *messageBox;
+
+	DataBase *Mydb;
+
+
 };
 
 

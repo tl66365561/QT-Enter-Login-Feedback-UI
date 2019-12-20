@@ -44,15 +44,26 @@ QDialog(parent)
 	connect(loginBtn,SIGNAL(clicked()),this,SLOT(enter_()));
 	connect(exitBtn,SIGNAL(clicked()),this,SLOT(close()));
 
+	Mydb=new DataBase();
+	Mydb->initsql();  
+
 	this->show();
 }
+
+
+
 
 void EnterForm::enter_()
 {
 	//获得userNameLEd输入框的文本：userNameLEd->text()；
 	//trimmed()去掉前后空格
 	//tr()函数，防止设置中文时乱码
-	if(userNameLEd->text().trimmed() == tr("tonglin") && pwdLEd->text() == tr("123456"))             //添加数据库之后，这边需要搞一个Search去判断是否在数据库中
+
+	//userNameLEd->text().trimmed() == tr("tonglin") && pwdLEd->text() == tr("123456")
+	QString s1=userNameLEd->text().trimmed();
+	QString s2=pwdLEd->text();
+
+	if(Mydb->Search(s1,s2))             //添加数据库之后，这边需要搞一个Search去判断是否在数据库中
 	{
 		
 		//内存泄漏
@@ -84,4 +95,11 @@ void EnterForm::enter_()
 EnterForm::~EnterForm(){
 
 	delete messageBox;
-}
+	delete Mydb;
+	delete userNameLbl;        
+	delete pwdLbl;             
+	delete userNameLEd;     
+	delete pwdLEd;          
+	delete loginBtn;      
+	delete exitBtn;       
+}	

@@ -29,7 +29,8 @@ public:
 	void initsql();                
 	void createtable(); 
 	void insert(QString Usr,QString Pwd);
-	
+	bool Search(QString s1,QString s2);
+
 private:
 	//QSqlQuery *query;
 	//QSqlQuery sql_query;

@@ -1,4 +1,4 @@
-﻿Build started 2019/12/19 20:08:07.
+﻿Build started 2019/12/20 12:15:17.
      1>Project "C:\Users\ADMIN\documents\visual studio 2010\Projects\regist\regist\regist.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Release\regist.lastbuildstate".
@@ -57,4 +57,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.21
+Time Elapsed 00:00:07.73

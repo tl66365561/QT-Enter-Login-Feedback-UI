@@ -85,7 +85,21 @@ void LoginForm::true_(){   //将注册信息插入到关联数据库
 
 }
 
-LoginForm::~LoginForm(){}
+LoginForm::~LoginForm(){
+
+	delete Mydb;
+	delete infolable;       
+	delete usrlable;        
+	delete pwdLable;        
+	delete usrLEd;      
+	delete pwdLEd;       
+	delete TrueBtn;    
+	delete FalseBtn;   
+	delete messageBox;
+
+}
+
+
 
 
 

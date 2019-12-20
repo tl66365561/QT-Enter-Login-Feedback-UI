@@ -79,6 +79,10 @@ MainWindow::~MainWindow(){
 delete en;
 delete fe;
 delete lo;
+delete infolable; 
+delete enterBtn;       
+delete loginBtn;       
+delete feedbackBtn;    
 }
 
 

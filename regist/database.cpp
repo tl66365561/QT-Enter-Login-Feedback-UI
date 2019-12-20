@@ -192,6 +192,55 @@ void DataBase::initsql(){
 }
 
 
+
+bool DataBase::Search(QString s1,QString s2){
+
+	//在数据库中检索s1对应的结果串，然后与s2进行比对
+
+	//select pwd from UserInfo where usr=s1;
+	
+	QSqlQuery sql_query(db);
+	QString search_sql="select password from UserInfo where username=(?)";
+	sql_query.prepare(search_sql);
+	sql_query.addBindValue(s1);
+
+	if(!sql_query.exec())
+	{
+		qDebug() << "Error: Fail to Search." << sql_query.lastError();
+	}
+	else
+	{
+		qDebug() << "Search Success !";
+	}
+
+
+
+	//报错： QSqlQuery::value: not positioned on a valid record
+	QString pass;
+
+     if(sql_query.next()){
+	 pass = sql_query.value(0).toString();
+	 }
+
+
+	 /*QSqlRecord rec = sql_query.record();
+	 int snamecol = rec.indexOf(s1);
+	 QString value = sql_query.value(snamecol).toString();*/
+	
+	
+	if(s2==pass)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+
+
+	}
+}
+
+
 void DataBase::createtable(){
 	
 	QSqlQuery sql_query(db);
