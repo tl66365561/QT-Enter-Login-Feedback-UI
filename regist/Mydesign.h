@@ -1,6 +1,6 @@
-#ifndef  MYDESIGN_H
+ï»¿#ifndef  MYDESIGN_H
 #define  MYDESIGN_H
-#pragma execution_character_set("utf-8") 
+//#pragma execution_character_set("utf-8") 
 
 
 
@@ -27,9 +27,9 @@ public:
 private:
 	//layout
 	QLabel *infolable; 
-	QPushButton *enterBtn;        //µÇÂ¼°´Å¥
-	QPushButton *loginBtn;        //×¢²á°´Å¥
-	QPushButton *feedbackBtn;     //·´À¡°´Å¥
+	QPushButton *enterBtn;        //ç™»å½•æŒ‰é’®
+	QPushButton *loginBtn;        //æ³¨å†ŒæŒ‰é’®
+	QPushButton *feedbackBtn;     //åé¦ˆæŒ‰é’®
 	EnterForm *en;
 	FeedbackForm *fe; 
 	LoginForm *lo;

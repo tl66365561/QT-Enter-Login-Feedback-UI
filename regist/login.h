@@ -1,4 +1,4 @@
-#ifndef LOGIN_H
+ï»¿#ifndef LOGIN_H
 #define LOGIN_H
 
 #include <QMainWindow>
@@ -17,23 +17,23 @@ class LoginForm: public QDialog{
 Q_OBJECT 
 
 public:
-	explicit LoginForm(QDialog *parent = 0);  //explicit ·ÀÖ¹ÆçÒå
+	explicit LoginForm(QDialog *parent = 0);  //explicit é˜²æ­¢æ­§ä¹‰
 	~LoginForm();
 	
 
 public slots:
-	void true_();//µã»÷È·ÈÏ°´Å¥ºóÖ´ĞĞµÄ²Ûº¯Êı 
+	void true_();//ç‚¹å‡»ç¡®è®¤æŒ‰é’®åæ‰§è¡Œçš„æ§½å‡½æ•° 
 
 
 private:
 
-	QLabel *infolable;         //¾ÓÖĞÏÔÊ¾¡°×¢²á½çÃæ¡±×ÖÑù
-	QLabel *usrlable;         //"ÓÃ»§Ãû"±êÇ©
-	QLabel *pwdLable;              //"ÃÜÂë"±êÇ©
-	QLineEdit *usrLEd;      //ÓÃ»§Ãû±à¼­ĞĞ
-	QLineEdit *pwdLEd;           //ÃÜÂë±à¼­ĞĞ
-	QPushButton *TrueBtn;        //È·ÈÏ°´Å¥
-	QPushButton *FalseBtn;       //È¡Ïû°´Å¥
+//	QLabel *infolable;         //å±…ä¸­æ˜¾ç¤ºâ€œæ³¨å†Œç•Œé¢â€å­—æ ·
+	QLabel *usrlable;         //"ç”¨æˆ·å"æ ‡ç­¾
+	QLabel *pwdLable;              //"å¯†ç "æ ‡ç­¾
+	QLineEdit *usrLEd;      //ç”¨æˆ·åç¼–è¾‘è¡Œ
+	QLineEdit *pwdLEd;           //å¯†ç ç¼–è¾‘è¡Œ
+	QPushButton *TrueBtn;        //ç¡®è®¤æŒ‰é’®
+	QPushButton *FalseBtn;       //å–æ¶ˆæŒ‰é’®
 	QMessageBox* messageBox;
 
 	DataBase *Mydb;

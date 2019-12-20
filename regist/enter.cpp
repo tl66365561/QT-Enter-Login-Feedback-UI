@@ -1,51 +1,55 @@
 #include "enter.h"
 
-EnterForm::EnterForm(QDialog *parent) :
-QDialog(parent)
-{
-	//ÉèÖÃ´°Ìå±êÌâ
-	this->setWindowTitle(tr("Enter UI"));
+EnterForm::EnterForm(QDialog *parent) :messageBox(nullptr),
+QDialog(parent){
 
-	//ÓÃ»§ÃûLabel
+
+	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));  
+
+	//è®¾ç½®çª—ä½“æ ‡é¢˜
+	//QString s("ç™»é™†ç•Œé¢");
+	//QString ui=s.toUtf8();
+	this->setWindowTitle("ç™»å½•ç•Œé¢");
+
+	//ç”¨æˆ·åLabel
 	//userNameLbl->setMargin(20);
-	userNameLbl = new QLabel(this);   //newÒ»¸ö±êÇ©¶ÔÏó
+	userNameLbl = new QLabel(this);   //newä¸€ä¸ªæ ‡ç­¾å¯¹è±¡
 	userNameLbl->setMargin(20);
-	userNameLbl->move(70,80);         //ÒÆ¶¯µ½(70,80)Î»ÖÃ(Label×óÉÏ½Ç×ø±ê£¬Ïà¶ÔÓÚ¸¸´°Ìå)
-	userNameLbl->setText("UserName:");  //ÉèÖÃ±êÇ©ÎÄ±¾
+	userNameLbl->move(20,60);         //ç§»åŠ¨åˆ°(70,80)ä½ç½®(Labelå·¦ä¸Šè§’åæ ‡ï¼Œç›¸å¯¹äºŽçˆ¶çª—ä½“)
+	userNameLbl->setText("ç”¨æˆ·ID:");  //è®¾ç½®æ ‡ç­¾æ–‡æœ¬
 
-	//ÓÃ»§ÃûÊäÈë¿ò
+	//ç”¨æˆ·åè¾“å…¥æ¡†
 	userNameLEd = new QLineEdit(this);
 	userNameLEd->move(120,80);
-	userNameLEd->setPlaceholderText(tr("Please input UserName!"));//Õ¼Î»·û
+	userNameLEd->setPlaceholderText(tr("Please input UserName!"));//å ä½ç¬¦
 
-	//ÃÜÂëLabel
+	//å¯†ç Label
 	pwdLbl = new QLabel(this);
-	pwdLbl->move(80,130);
+	pwdLbl->move(20,110);
 	pwdLbl->setMargin(20);
-	pwdLbl->setText("PassWord:");
+	pwdLbl->setText("å¯†ç :");
 
-	//ÃÜÂëÊäÈë¿ò
+	//å¯†ç è¾“å…¥æ¡†
 	pwdLEd = new QLineEdit(this);
 	pwdLEd->move(120,130);
 	pwdLEd->setPlaceholderText("Please input PassWord!");
-	pwdLEd->setEchoMode(QLineEdit::Password);//ÊäÈëµÄÃÜÂëÒÔÔ²µãÏÔÊ¾
+	pwdLEd->setEchoMode(QLineEdit::Password);//è¾“å…¥çš„å¯†ç ä»¥åœ†ç‚¹æ˜¾ç¤º
 
-	//µÇÂ¼°´Å¥
+	//ç™»å½•æŒ‰é’®
 	loginBtn = new QPushButton(this);
-	loginBtn->move(80,200);
-	loginBtn->setText("Enter");
+	loginBtn->move(60,200);
+	loginBtn->setText("ç™»å½•");
 
-	//ÍË³ö°´Å¥
+	//é€€å‡ºæŒ‰é’®
 	exitBtn = new QPushButton(this);
-	exitBtn->move(170,200);
-	exitBtn->setText("Quit");
-
-	//µ¥»÷µÇÂ¼°´Å¥Ê± Ö´ÐÐ LoginForm::login ²Ûº¯Êý(×Ô¶¨Òå)£»µ¥»÷ÍË³ö°´Å¥Ê± Ö´ÐÐ LoginForm::close ²Ûº¯Êý(´°ÌåµÄ¹Ø±Õº¯Êý£¬²»ÓÃ×Ô¼ºÐ´)
+	exitBtn->move(190,200);
+	exitBtn->setText("å–æ¶ˆ");
+	//å•å‡»ç™»å½•æŒ‰é’®æ—¶ æ‰§è¡Œ LoginForm::login æ§½å‡½æ•°(è‡ªå®šä¹‰)ï¼›å•å‡»é€€å‡ºæŒ‰é’®æ—¶ æ‰§è¡Œ LoginForm::close æ§½å‡½æ•°(çª—ä½“çš„å…³é—­å‡½æ•°ï¼Œä¸ç”¨è‡ªå·±å†™)
 	connect(loginBtn,SIGNAL(clicked()),this,SLOT(enter_()));
 	connect(exitBtn,SIGNAL(clicked()),this,SLOT(close()));
 
 	Mydb=new DataBase();
-	Mydb->initsql();  
+	Mydb->initsql(); 
 
 	this->show();
 }
@@ -55,18 +59,18 @@ QDialog(parent)
 
 void EnterForm::enter_()
 {
-	//»ñµÃuserNameLEdÊäÈë¿òµÄÎÄ±¾£ºuserNameLEd->text()£»
-	//trimmed()È¥µôÇ°ºó¿Õ¸ñ
-	//tr()º¯Êý£¬·ÀÖ¹ÉèÖÃÖÐÎÄÊ±ÂÒÂë
+	//èŽ·å¾—userNameLEdè¾“å…¥æ¡†çš„æ–‡æœ¬ï¼šuserNameLEd->text()ï¼›
+	//trimmed()åŽ»æŽ‰å‰åŽç©ºæ ¼
+	//tr()å‡½æ•°ï¼Œé˜²æ­¢è®¾ç½®ä¸­æ–‡æ—¶ä¹±ç 
 
 	//userNameLEd->text().trimmed() == tr("tonglin") && pwdLEd->text() == tr("123456")
 	QString s1=userNameLEd->text().trimmed();
 	QString s2=pwdLEd->text();
 
-	if(Mydb->Search(s1,s2))             //Ìí¼ÓÊý¾Ý¿âÖ®ºó£¬Õâ±ßÐèÒª¸ãÒ»¸öSearchÈ¥ÅÐ¶ÏÊÇ·ñÔÚÊý¾Ý¿âÖÐ
+	if(Mydb->Search(s1,s2))             //æ·»åŠ æ•°æ®åº“ä¹‹åŽï¼Œè¿™è¾¹éœ€è¦æžä¸€ä¸ªSearchåŽ»åˆ¤æ–­æ˜¯å¦åœ¨æ•°æ®åº“ä¸­
 	{
 		
-		//ÄÚ´æÐ¹Â©
+		//å†…å­˜æ³„æ¼
 		messageBox = new QMessageBox(this);
 		messageBox->setIcon(QMessageBox::Information);
 		messageBox->setWindowTitle(" Hello !! ");
@@ -75,17 +79,18 @@ void EnterForm::enter_()
 		
 		
 		
-		//accept();//¹Ø±Õ´°Ìå£¬²¢ÉèÖÃ·µ»ØÖµÎªAccepted
+		//accept();//å…³é—­çª—ä½“ï¼Œå¹¶è®¾ç½®è¿”å›žå€¼ä¸ºAccepted
 	} 
 	else 
-	{                              //±êÌâ              ÄÚÈÝ                OK°´Å¥  
-		QMessageBox::warning(this, tr("Warning£¡"),tr("Input Error£¡"),QMessageBox::Yes);
+	{                              //æ ‡é¢˜              å†…å®¹                OKæŒ‰é’®  
 
-		// Çå¿ÕÊäÈë¿òÄÚÈÝ
+		QMessageBox::warning(this, tr("Warning!"),tr("Input Error!"),QMessageBox::Yes);
+
+		// æ¸…ç©ºè¾“å…¥æ¡†å†…å®¹
 		userNameLEd->clear();
 		pwdLEd->clear();
 
-		//¹â±ê¶¨Î»
+		//å…‰æ ‡å®šä½
 		userNameLEd->setFocus();
 	}
 }
@@ -94,7 +99,9 @@ void EnterForm::enter_()
 
 EnterForm::~EnterForm(){
 
-	delete messageBox;
+	if(messageBox)
+		delete messageBox;
+	
 	delete Mydb;
 	delete userNameLbl;        
 	delete pwdLbl;             

@@ -1,4 +1,4 @@
-#ifndef FEEDBACK_H
+Ôªø#ifndef FEEDBACK_H
 #define FEEDBACK_H
 
 #include <QMainWindow>
@@ -11,7 +11,7 @@ class FeedbackForm :public QMainWindow{
 
 	Q_OBJECT 
 public:
-	explicit FeedbackForm(QWidget* parent=0);  //explicit ∑¿÷π∆Á“Â
+	explicit FeedbackForm(QWidget* parent=0);  //explicit Èò≤Ê≠¢Ê≠ß‰πâ
 	~FeedbackForm();
 
 

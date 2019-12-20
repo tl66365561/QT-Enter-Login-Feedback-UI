@@ -1,5 +1,4 @@
-
-#ifndef ENTER_H
+ï»¿#ifndef ENTER_H
 #define ENTER_H
 
 
@@ -18,19 +17,19 @@ class EnterForm : public QDialog
 {
 	Q_OBJECT 
 public:
-	explicit EnterForm(QDialog *parent = 0);  //explicit ·ÀÖ¹ÆçÒå
+	explicit EnterForm(QDialog *parent = 0);  //explicit é˜²æ­¢æ­§ä¹‰
 	~EnterForm();
 
 public slots:
-		void enter_();//µã»÷µÇÂ¼°´Å¥ÊÇÖ´ĞĞµÄ²Ûº¯Êı
+		void enter_();//ç‚¹å‡»ç™»å½•æŒ‰é’®æ˜¯æ‰§è¡Œçš„æ§½å‡½æ•°
 	
 private:
-	QLabel *userNameLbl;         //"ÓÃ»§Ãû"±êÇ©
-	QLabel *pwdLbl;              //"ÃÜÂë"±êÇ©
-	QLineEdit *userNameLEd;      //ÓÃ»§Ãû±à¼­ĞĞ
-	QLineEdit *pwdLEd;           //ÃÜÂë±à¼­ĞĞ
-	QPushButton *loginBtn;       //µÇÂ¼°´Å¥
-	QPushButton *exitBtn;        //ÍË³ö°´Å¥
+	QLabel *userNameLbl;         //"ç”¨æˆ·å"æ ‡ç­¾
+	QLabel *pwdLbl;              //"å¯†ç "æ ‡ç­¾
+	QLineEdit *userNameLEd;      //ç”¨æˆ·åç¼–è¾‘è¡Œ
+	QLineEdit *pwdLEd;           //å¯†ç ç¼–è¾‘è¡Œ
+	QPushButton *loginBtn;       //ç™»å½•æŒ‰é’®
+	QPushButton *exitBtn;        //é€€å‡ºæŒ‰é’®
 	QMessageBox *messageBox;
 
 	DataBase *Mydb;

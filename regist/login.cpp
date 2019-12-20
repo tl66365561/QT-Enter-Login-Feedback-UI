@@ -6,52 +6,59 @@
 
 LoginForm::LoginForm(QDialog *parent):	
 					 QDialog(parent)
+					,messageBox(nullptr)
 
 {
-	//ÉèÖÃ´°Ìå±êÌâ
-	this->setWindowTitle(tr("Login UI"));
+
+	QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));   
+
+	//è®¾ç½®çª—ä½“æ ‡é¢˜
+	this->setWindowTitle("æ³¨å†Œç•Œé¢");
 
 
-	infolable=new QLabel(this);
-	infolable->move(70,40);
-	infolable->setText("Welcome to Login UI ");
+	/*infolable=new QLabel(this);
+	infolable->move(130,40);
+	infolable->setText("æ³¨å†Œç•Œé¢ ");*/
 
 	
 	//userNameLbl->setMargin(20);
-	usrlable = new QLabel(this);   //newÒ»¸ö±êÇ©¶ÔÏó
+	usrlable = new QLabel(this);   //newä¸€ä¸ªæ ‡ç­¾å¯¹è±¡
 	
 	usrlable->setMargin(20);
-	usrlable->move(70,80);         //ÒÆ¶¯µ½(70,80)Î»ÖÃ(Label×óÉÏ½Ç×ø±ê£¬Ïà¶ÔÓÚ¸¸´°Ìå)
-	usrlable->setText("UserName:");  //ÉèÖÃ±êÇ©ÎÄ±¾
+	usrlable->move(20,60);         //ç§»åŠ¨åˆ°(70,80)ä½ç½®(Labelå·¦ä¸Šè§’åæ ‡ï¼Œç›¸å¯¹äºŽçˆ¶çª—ä½“)
+	usrlable->setText("ç”¨æˆ·ID:");  //è®¾ç½®æ ‡ç­¾æ–‡æœ¬
+	//usrlable->setFrameShadow(QFrame::Plain);
+	//usrlable->setFrameShape(QFrame::StyledPanel);
 
-	//ÓÃ»§ÃûÊäÈë¿ò
+
+	//ç”¨æˆ·åè¾“å…¥æ¡†
 	usrLEd = new QLineEdit(this);
-	usrLEd->move(120,80);
-	usrLEd->setPlaceholderText(tr("Please input UserName!"));//Õ¼Î»·û
+	usrLEd->move(110,80);
+	usrLEd->setPlaceholderText(tr("Please input UserName!"));//å ä½ç¬¦
 
-	//ÃÜÂëLabel
+	//å¯†ç Label
 	pwdLable = new QLabel(this);
-	pwdLable->move(80,130);
+	pwdLable->move(20,110);
 	pwdLable->setMargin(20);
-	pwdLable->setText("PassWord:");
+	pwdLable->setText("å¯†ç :");
 
-	//ÃÜÂëÊäÈë¿ò
+	//å¯†ç è¾“å…¥æ¡†
 	pwdLEd = new QLineEdit(this);
-	pwdLEd->move(120,130);
+	pwdLEd->move(110,130);
 	pwdLEd->setPlaceholderText("Please input PassWord!");
-	pwdLEd->setEchoMode(QLineEdit::Password);//ÊäÈëµÄÃÜÂëÒÔÔ²µãÏÔÊ¾
+	pwdLEd->setEchoMode(QLineEdit::Password);//è¾“å…¥çš„å¯†ç ä»¥åœ†ç‚¹æ˜¾ç¤º
 
-	//È·ÈÏ°´Å¥
+	//ç¡®è®¤æŒ‰é’®
 	TrueBtn = new QPushButton(this);
-	TrueBtn->move(80,200);
-	TrueBtn->setText("YES");
+	TrueBtn->move(60,200);
+	TrueBtn->setText("ç¡®è®¤");
 
-	//ÍË³ö°´Å¥
+	//é€€å‡ºæŒ‰é’®
 	FalseBtn = new QPushButton(this);
-	FalseBtn->move(170,200);
-	FalseBtn->setText("NO");
+	FalseBtn->move(190,200);
+	FalseBtn->setText("å–æ¶ˆ");
 
-	//µ¥»÷µÇÂ¼°´Å¥Ê± Ö´ÐÐ LoginForm::login ²Ûº¯Êý(×Ô¶¨Òå)£»µ¥»÷ÍË³ö°´Å¥Ê± Ö´ÐÐ LoginForm::close ²Ûº¯Êý(´°ÌåµÄ¹Ø±Õº¯Êý£¬²»ÓÃ×Ô¼ºÐ´)
+	//å•å‡»ç™»å½•æŒ‰é’®æ—¶ æ‰§è¡Œ LoginForm::login æ§½å‡½æ•°(è‡ªå®šä¹‰)ï¼›å•å‡»é€€å‡ºæŒ‰é’®æ—¶ æ‰§è¡Œ LoginForm::close æ§½å‡½æ•°(çª—ä½“çš„å…³é—­å‡½æ•°ï¼Œä¸ç”¨è‡ªå·±å†™)
 	connect(TrueBtn,SIGNAL(clicked()),this,SLOT(true_()));
 	connect(FalseBtn,SIGNAL(clicked()),this,SLOT(close()));
 
@@ -59,23 +66,21 @@ LoginForm::LoginForm(QDialog *parent):
 
 	Mydb=new DataBase();
 	Mydb->initsql();  
-
 	this->show();
-
 }
 
-void LoginForm::true_(){   //½«×¢²áÐÅÏ¢²åÈëµ½¹ØÁªÊý¾Ý¿â
+void LoginForm::true_(){   //å°†æ³¨å†Œä¿¡æ¯æ’å…¥åˆ°å…³è”æ•°æ®åº“
     
 	     
 
-    //»ñµÃÓÃ»§ÔÚ±à¼­ÐÐÖÐÊäÈëµÄÄÚÈÝ
+    //èŽ·å¾—ç”¨æˆ·åœ¨ç¼–è¾‘è¡Œä¸­è¾“å…¥çš„å†…å®¹
 	QString s1=usrLEd->text();
 	QString s2=pwdLEd->text();
-	Mydb->insert(s1,s2);   //Êý¾ÝÎ´²åÈë£¿£¿£¿
+	Mydb->insert(s1,s2);   //æ•°æ®æœªæ’å…¥ï¼Ÿï¼Ÿï¼Ÿ
 	
 
 
-	//µ¯´°ÌáÊ¾×¢²á³É¹¦				 	
+	//å¼¹çª—æç¤ºæ³¨å†ŒæˆåŠŸ				 	
 	messageBox = new QMessageBox(this);
 	messageBox->setIcon(QMessageBox::Information);
 	messageBox->setWindowTitle(" Login Success !! ");
@@ -88,14 +93,16 @@ void LoginForm::true_(){   //½«×¢²áÐÅÏ¢²åÈëµ½¹ØÁªÊý¾Ý¿â
 LoginForm::~LoginForm(){
 
 	delete Mydb;
-	delete infolable;       
+	//delete infolable;       
 	delete usrlable;        
 	delete pwdLable;        
 	delete usrLEd;      
 	delete pwdLEd;       
 	delete TrueBtn;    
-	delete FalseBtn;   
-	delete messageBox;
+	delete FalseBtn;
+
+	if(messageBox)
+		delete messageBox;
 
 }
 

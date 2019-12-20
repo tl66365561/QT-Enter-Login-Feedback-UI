@@ -32,8 +32,10 @@ int main(int argc, char *argv[])
 //pa.setBrush(this->backgroundRole(), QBrush(pixmap));
 //this->setPalette(pa);
 
-//3.程序执行一次就中断...
+//3.程序执行一次就中断...      delete释放了分配的地址  delete之前判空
 
 //4.数据库的连接操作...
+
+
 //5.中文乱码  编码格式的问题  输入法的编码格式和编辑器的编码格式？？？？？？？？？？？？？？？  
 //6.文本标签不能正常显示在框的左边    
